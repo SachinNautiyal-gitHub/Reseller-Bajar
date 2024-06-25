@@ -6,8 +6,13 @@ const app = express();
 
 
 app.get('/', (req, res)=>{
-    console.log("Hello from server");
+    res.send("Hello from server");
 })
+
+app.use('/user', require('./routes/user'));
+app.use('/product', require('./routes/product'));
+
+
 
 
 app.listen(5000, ()=>{
